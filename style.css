@@ -1,0 +1,118 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+main {
+  height: 100vh;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 25%;
+  gap: 0.8em;
+  grid-template-areas:
+    "img1 img1 img2 img3"
+    "img1 img1 img4 img4"
+    "img5 img5 img6 img7"
+    "img5 img5  img8 img8";
+  height: 78%;
+  padding: 5px;
+}
+h1 {
+  text-align: center;
+}
+.gallery__picture {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+.gallery__picture::before {
+  content: "Naturaleza";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5b40f3a6;
+  color: #fff;
+
+  transform: translate(100%);
+  -webkit-transform: translate(100%);
+  -moz-transform: translate(100%);
+  -ms-transform: translate(100%);
+  -o-transform: translate(100%);
+  transition: transform 0.7s;
+  -webkit-transition: transform 0.7s;
+  -moz-transition: transform 0.7s;
+  -ms-transition: transform 0.7s;
+  -o-transition: transform 0.7s;
+}
+.gallery__picture:hover::before {
+  transform: translate(0) rotate(360deg);
+  -webkit-transform: translate(0) rotate(360deg);
+  -moz-transform: translate(0) rotate(360deg);
+  -ms-transform: translate(0) rotate(360deg);
+  -o-transform: translate(0) rotate(360deg);
+}
+
+.gallery__picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallety__picture--img1 {
+  grid-area: img1;
+}
+.gallety__picture--img2 {
+  grid-area: img2;
+}
+.gallety__picture--img3 {
+  grid-area: img3;
+}
+.gallety__picture--img4 {
+  grid-area: img4;
+}
+.gallety__picture--img5 {
+  grid-area: img5;
+}
+.gallety__picture--img6 {
+  grid-area: img6;
+}
+.gallety__picture--img7 {
+  grid-area: img7;
+}
+.gallety__picture--img8 {
+  grid-area: img8;
+}
+@media screen and (max-width: 636px) {
+  .gallery {
+    grid-template-areas:
+      "img1 img1 img2 img2 "
+      "img1 img1 img4 img4"
+      "img1 img1 img7 img7   "
+      "img5 img5 img8 img8"
+      "img5 img5 img6 img6"
+      "img5 img5 img3 img3";
+  }
+}
+@media screen and (max-width: 408px) {
+  .gallery {
+    grid-template-areas:
+      "img1 img1 img1 img1 "
+      "img2 img2 img2 img2"
+      "img3 img3 img3 img3   "
+      "img4 img4 img4 img4"
+      "img5 img5 img5 img5"
+      "img6 img6 img6 img6"
+      "img7 img7 img7 img7"
+      "img8 img8 img8 img8";
+  }
+}
